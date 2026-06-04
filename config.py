@@ -34,6 +34,9 @@ API_URL = getenv("API_URL", 'https://portal.arcmusic.fun/') #youtube song url
 VIDEO_API_URL = getenv("VIDEO_API_URL", 'https://api.video.thequickearn.xyz')
 API_KEY = getenv("API_KEY", 'ARC11cec58639ed7021866f48') # youtube song api key, generate free key or buy paid plan from panel.thequickearn.xyz
 
+YTPROXY_URL = getenv("YTPROXY_URL", 'https://tgapi.xbitcode.com') ## xBit Music Endpoint.
+YT_API_KEY = getenv("YT_API_KEY" , 'xbit_e40oXFazWDFy6rLPPICI1M8KdlW-91Dc' ) ## Your API key like: 
+
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
     "https://github.com/chu-987/Sanuliki1",
