@@ -8,6 +8,9 @@ RUN apt-get update && \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# အဓိကအချက်: Bot အတွက် လိုအပ်တဲ့ Folder တွေကို ကြိုတင်ဆောက်ပေးထားပါ
+RUN mkdir -p /app/downloads /app/cookies
+
 COPY . /app/
 WORKDIR /app/
 
