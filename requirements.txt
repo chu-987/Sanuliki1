@@ -1,5 +1,5 @@
 pyrogram==2.0.106
-git+https://github.com/pytgcalls/pytgcalls@v2.1.0
+pytgcalls
 tgcrypto
 yt-dlp
 motor
