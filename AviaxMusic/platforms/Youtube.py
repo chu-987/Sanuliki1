@@ -49,6 +49,29 @@ class YouTubeAPI:
     def __init__(self):
         self.base = "https://www.youtube.com/watch?v="
 
+    # --- Error ဖြစ်နေတဲ့ url method ကို ပြန်ထည့်ပေးထားပါတယ် ---
+    async def url(self, message_1: Message) -> Union[str, None]:
+        messages = [message_1]
+        if message_1.reply_to_message:
+            messages.append(message_1.reply_to_message)
+        text = ""
+        offset = None
+        length = None
+        for message in messages:
+            if offset: break
+            if message.entities:
+                for entity in message.entities:
+                    if entity.type == MessageEntityType.URL:
+                        text = message.text or message.caption
+                        offset, length = entity.offset, entity.length
+                        break
+            elif message.caption_entities:
+                for entity in message.caption_entities:
+                    if entity.type == MessageEntityType.TEXT_LINK:
+                        return entity.url
+        if offset is None: return None
+        return text[offset : offset + length]
+
     async def download(self, link, mystic, video=None, **kwargs) -> str:
         # Step 1: Try API First
         downloaded_file = await get_stream_url_from_api(link, video)
