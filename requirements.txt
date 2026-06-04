@@ -8,11 +8,13 @@ hachoir
 heroku3
 httpx[http2]==0.25.2
 motor
+pyrogram==2.0.106
+tgcrypto
 numpy
 opencv-python
 pillow==9.5.0
 psutil
-py-tgcalls==0.9.7
+py-tgcalls==1.0.0
 pytgcrypto
 kurigram
 python-dotenv
