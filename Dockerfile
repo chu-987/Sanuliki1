@@ -12,7 +12,7 @@ RUN mkdir -p /app/downloads /app/cookies
 COPY . /app/
 WORKDIR /app/
 
-# အရေးကြီး: Pip ကို အရင်ဆုံးသေချာအောင် လုပ်ပြီးမှ Library တွေကို Install လုပ်ပါ
+# အရေးကြီးဆုံးအချက် - Pip ကို upgrade လုပ်ပြီးမှ install လုပ်ပါ
 RUN pip3 install --no-cache-dir --upgrade pip setuptools wheel
 RUN pip3 install --no-cache-dir -r requirements.txt
 
